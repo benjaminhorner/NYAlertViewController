@@ -273,7 +273,7 @@
         self.messageTextView.textAlignment = NSTextAlignmentCenter;
         self.messageTextView.textColor = [UIColor darkGrayColor];
         self.messageTextView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-        self.messageTextView.text = NSLocalizedString(@"Message Text View", nil);
+//        self.messageTextView.text = NSLocalizedString(@"Message Text View", nil);
         [self.alertBackgroundView addSubview:self.messageTextView];
         
         _contentViewContainerView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -339,12 +339,12 @@
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_textFieldContainerView)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_actionButtonContainerView]-20-|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-25-[_actionButtonContainerView]-25-|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_actionButtonContainerView)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[_titleLabel]-2-[_messageTextView]-15-[_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-40-|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[_titleLabel]-2-[_messageTextView]-15-[_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-30-|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_titleLabel,
