@@ -18,7 +18,7 @@
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     
-    self.textContainerInset = UIEdgeInsetsMake(25, 20, 40, 20) /*UIEdgeInsetsZero*/;
+    self.textContainerInset = UIEdgeInsetsZero;
     
     return self;
 }
@@ -261,7 +261,7 @@
         self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor darkGrayColor];
-        self.titleLabel.text = NSLocalizedString(@"Title Label", nil);
+        //        self.titleLabel.text = NSLocalizedString(@"Title Label", nil);
         [self.alertBackgroundView addSubview:self.titleLabel];
         
         _messageTextView = [[NYAlertTextView alloc] initWithFrame:CGRectZero];
@@ -339,12 +339,12 @@
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_textFieldContainerView)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_actionButtonContainerView]|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_actionButtonContainerView]-20-|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_actionButtonContainerView)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_titleLabel]-2-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[_titleLabel]-2-[_messageTextView]-15-[_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-40-|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_titleLabel,
