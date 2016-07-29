@@ -18,7 +18,7 @@
 - (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     
-    self.textContainerInset = UIEdgeInsetsZero;
+    self.textContainerInset = UIEdgeInsetsMake(25, 20, 40, 20) /*UIEdgeInsetsZero*/;
     
     return self;
 }
